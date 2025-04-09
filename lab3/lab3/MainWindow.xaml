@@ -7,11 +7,41 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel Margin="10">
-            <Button x:Name="btnZadanieA" Content="Zadanie A – Wyświetl pojazdy" Width="250" Margin="0,0,0,10" Click="btnZadanieA_Click"/>
-            <ListBox x:Name="listBoxPojazdy" Height="150" Margin="0,0,0,10"/>
-            <Button x:Name="btnHistoria" Content="Pokaż historię nazw wybranego pojazdu" Width="300" Margin="0,0,0,10" Click="btnHistoria_Click"/>
-            <ListBox x:Name="listBoxHistoria" Height="150"/>
-        </StackPanel>
+        <TabControl Margin="10">
+
+            <!-- Zakładka AKTUALNE -->
+            <TabItem Header="Aktualne">
+                <StackPanel Margin="10">
+                    <Button x:Name="btnZadanieA" Content="Zadanie A – Wyświetl pojazdy" Width="250" Margin="0,0,0,10" Click="btnZadanieA_Click"/>
+                    <ListBox x:Name="listBoxPojazdy" Height="150" Margin="0,0,0,10"/>
+                    <Button x:Name="btnHistoria" Content="Pokaż historię nazw wybranego pojazdu" Width="300" Margin="0,0,0,10" Click="btnHistoria_Click"/>
+                    <ListBox x:Name="listBoxHistoria" Height="150"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Zakładka ZADANIE A – Obywatele -->
+            <TabItem Header="Zadanie A">
+                <StackPanel Margin="10">
+                    <Button x:Name="btnStworzObywateli" Content="Stwórz obywateli" Width="200" Margin="0,0,0,10" Click="btnStworzObywateli_Click"/>
+                    <ListBox x:Name="listBoxObywatele" Height="250"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Zakładka ZADANIE B – Stożek -->
+            <TabItem Header="Zadanie B">
+                <StackPanel Margin="10">
+                    <Button x:Name="btnStworzStozek" Content="Stwórz stożek" Width="200" Margin="0,0,0,10" Click="btnStworzStozek_Click"/>
+                    <Label x:Name="labelStozek" FontSize="14" Padding="5" BorderBrush="Gray" BorderThickness="1"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Zakładka ZADANIE C – Prostopadłościany -->
+            <TabItem Header="Zadanie C">
+                <StackPanel Margin="10">
+                    <Button x:Name="btnStworzProstopadlosciany" Content="Stwórz prostopadłościany" Width="250" Margin="0,0,0,10" Click="btnStworzProstopadlosciany_Click"/>
+                    <ListBox x:Name="listBoxProstopadlosciany" Height="250"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

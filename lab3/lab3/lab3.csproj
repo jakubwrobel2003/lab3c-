@@ -9,6 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Obywatele\Obywatele.csproj" />
+    <ProjectReference Include="..\Prostopadloscian\Prostopadloscian.csproj" />
+    <ProjectReference Include="..\Stozek\Stozek.csproj" />
     <ProjectReference Include="..\WpfLibrary1\Motoryzacja.csproj" />
   </ItemGroup>
 

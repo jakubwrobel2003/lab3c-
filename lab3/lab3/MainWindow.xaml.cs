@@ -9,6 +9,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Motoryzacja;
+using Obywatelf;
+using Prostopadloscianf;
+using Stozekf;
 namespace lab3
 {
     /// <summary>
@@ -75,5 +78,57 @@ namespace lab3
                     MessageBox.Show("Nie wybrano żadnego pojazdu z historią nazw.");
                 }
             }
+        // Zadanie A – Obywatele
+        private void btnStworzObywateli_Click(object sender, RoutedEventArgs e)
+        {
+            Obywatel.Obywatele.Clear();
+            listBoxObywatele.Items.Clear();
+
+            new Obywatel("Kowalski", "90010112345");
+            new Obywatel("Nowak", "85030456789");
+            new Obywatel("Wiśniewski", "92081234567");
+
+            foreach (var ob in Obywatel.Obywatele)
+            {
+                listBoxObywatele.Items.Add(ob);
+            }
         }
+
+        // Zadanie B – Stożek
+        private void btnStworzStozek_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var stozek = new Stozek
+                {
+                    Promien = 3,
+                    Wysokosc = 5
+                };
+                labelStozek.Content = stozek.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message);
+            }
+        }
+
+        // Zadanie C – Prostopadłościany
+        private void btnStworzProstopadlosciany_Click(object sender, RoutedEventArgs e)
+        {
+            listBoxProstopadlosciany.Items.Clear();
+
+            Prostopadloscian[] tablica =
+            {
+                new Prostopadloscian(2, 3, 4),
+                new Prostopadloscian(5),
+                new Prostopadloscian(1.5, 2.5, 3.5),
+                new Prostopadloscian(2)
+            };
+
+            foreach (var p in tablica)
+            {
+                listBoxProstopadlosciany.Items.Add(p.ToString());
+            }
+        }
+    }
     }
